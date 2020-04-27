@@ -15,6 +15,8 @@ namespace QuanLyKhachSan.GUI
     // 2 lựa chọn khi thêm mới kách hàng đặt phòng và khách hàng cũ đến đặt phòng
     public partial class ThemKhachHang : Form
     {
+        public static string NgayDen;
+        public static string NgayDi;
         public ThemKhachHang()
         {
             InitializeComponent();
@@ -84,6 +86,8 @@ namespace QuanLyKhachSan.GUI
 
         private void ChonPhongBt_Click(object sender, EventArgs e)
         {
+            NgayDen = ngayNhanPicker.Value.ToString("yyyy-MM-dd");
+            NgayDi = ngayTraPicker.Value.ToString("yyyy-MM-dd");
             this.Hide();
             ChonPhong formChonPhong = new ChonPhong();
             formChonPhong.FormClosed += FormChonPhong_FormClosed;

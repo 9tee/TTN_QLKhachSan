@@ -21,22 +21,23 @@ namespace QuanLyKhachSan.GUI
 
         private void ChonPhong_Load(object sender, EventArgs e)
         {
-            //phongDataGrid.DataSource = xemPhong();
-            //phongDataGrid.Refresh();
+            phongDataGrid.DataSource = PhongController.HienTatCaPhongVaKTNgay(Convert.ToDateTime(ThemKhachHang.NgayDen),Convert.ToDateTime(ThemKhachHang.NgayDi));
+            phongDataGrid.Refresh();
 
-            //phongDataGrid.Columns["MaP"].Visible = false;
+            phongDataGrid.Columns["MaP"].Visible = true;
 
-            //phongDataGrid.Columns["MaP"].ReadOnly = true;
-            //phongDataGrid.Columns["GiaPhongNgay"].ReadOnly = true;
-            //phongDataGrid.Columns["GiaPhongGio"].ReadOnly = true;
-            //phongDataGrid.Columns["Tang"].ReadOnly = true;
-            //phongDataGrid.Columns["Trong"].ReadOnly = true;
-            //phongDataGrid.Columns["checkPhong"].ReadOnly = false;
+            phongDataGrid.Columns["MaP"].ReadOnly = true;
+            phongDataGrid.Columns["GiaPhongNgay"].ReadOnly = true;
+            phongDataGrid.Columns["GiaPhongGio"].ReadOnly = true;
+            phongDataGrid.Columns["Tang"].ReadOnly = true;
+            phongDataGrid.Columns["Trong"].ReadOnly = true;
+            phongDataGrid.Columns["checkPhong"].ReadOnly = false;
 
-            //phongDataGrid.Columns["GiaPhongNgay"].HeaderText = "Giá theo ngày";
-            //phongDataGrid.Columns["GiaPhongGio"].HeaderText = "Giá theo giờ";
-            //phongDataGrid.Columns["Tang"].HeaderText = "Tầng";
-            //phongDataGrid.Columns["Trong"].HeaderText = "Trống";
+            phongDataGrid.Columns["GiaPhongNgay"].HeaderText = "Giá theo ngày";
+            phongDataGrid.Columns["GiaPhongGio"].HeaderText = "Giá theo giờ";
+            phongDataGrid.Columns["Tang"].HeaderText = "Tầng";
+            phongDataGrid.Columns["Trong"].HeaderText = "Trống";
+
         }
 
         private void HuyBt_Click(object sender, EventArgs e)
