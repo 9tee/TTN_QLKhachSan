@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
+<<<<<<< HEAD
 namespace QuanLyKhachSan.GUI
 {
 
@@ -29,6 +30,23 @@ namespace QuanLyKhachSan.GUI
         {
             InitializeComponent();
             this.Name = "Đặt phòng";
+=======
+namespace QuanLyKhachSan.GUI
+{
+    // 2 lựa chọn khi thêm mới kách hàng đặt phòng và khách hàng cũ đến đặt phòng
+    public partial class ThemKhachHang : Form
+    {
+        public ThemKhachHang()
+        {
+            InitializeComponent();
+            this.Name = "Thêm khách hàng";
+        }
+
+        public ThemKhachHang(string TenKhachHang, string SDT, string CMT)
+        {
+            InitializeComponent();
+            this.Name = "Đặt phòng";
+>>>>>>> parent of a36975f... Truyền dữ liệu từ form ThemKhachHang sang CheckBox Trong của form ChonPhong
         }
 
         private void XacNhanBt_Click(object sender, EventArgs e)
@@ -88,8 +106,6 @@ namespace QuanLyKhachSan.GUI
 
         private void ChonPhongBt_Click(object sender, EventArgs e)
         {
-            NgayDen = ngayNhanPicker.Value.ToString("yyyy-MM-dd");
-            NgayDi = ngayTraPicker.Value.ToString("yyyy-MM-dd");
             this.Hide();
             ChonPhong formChonPhong = new ChonPhong();
             formChonPhong.FormClosed += FormChonPhong_FormClosed;
