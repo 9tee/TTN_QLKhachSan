@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyKhachSan
 {
-    class Phong
+    public class Phong
     {
         public int maP;
         public decimal giaPhongNgay;
@@ -29,6 +29,13 @@ namespace QuanLyKhachSan
             this.giaPhongGio = giaPhongGio;
             this.tang = tang;
             this.trong = trong;
+        }
+        public Phong(int maP, decimal giaPhongNgay, decimal giaPhongGio, int tang)
+        {
+            this.maP = maP;
+            this.giaPhongNgay = giaPhongNgay;
+            this.giaPhongGio = giaPhongGio;
+            this.tang = tang;
         }
         public int MaP { get => maP; set => maP = value; }
         public decimal GiaPhongNgay { get => giaPhongNgay; set => giaPhongNgay = value; }

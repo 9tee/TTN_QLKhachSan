@@ -45,7 +45,7 @@ namespace QuanLyKhachSan.GUI
 
             this.Close();
         }
-
+        
         private void XacNhanBt_Click(object sender, EventArgs e)
         {
             //foreach (DataGridViewRow row in phongDataGrid.Rows)
@@ -62,6 +62,16 @@ namespace QuanLyKhachSan.GUI
             //    }
             //}
             //this.Close();
+            foreach (DataGridViewRow row in phongDataGrid.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (Convert.ToBoolean(chk.Value) == true)
+                {
+                    ThemKhachHang.PhongDuocChon.Add(new Phong(Convert.ToInt32(row.Cells[1].Value), Convert.ToDecimal(row.Cells[2].Value), Convert.ToDecimal(row.Cells[3].Value), Convert.ToInt32(row.Cells[4].Value)));
+                }
+            }
+            this.Close();
         }
+        
     }
 }
