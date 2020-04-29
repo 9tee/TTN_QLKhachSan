@@ -64,6 +64,12 @@
     <Compile Include="GUI\DichVuVaDoDung.Designer.cs">
       <DependentUpon>DichVuVaDoDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\LichSuKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LichSuKhach.Designer.cs">
+      <DependentUpon>LichSuKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +91,30 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuDung.cs" />
+    <Compile Include="LichSuThueDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LichSuThueDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TNN_QLKSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TNN_QLKSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TNN_QLKSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TNN_QLKSDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="GUI\ChonPhong.resx">
       <DependentUpon>ChonPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DichVuVaDoDung.resx">
       <DependentUpon>DichVuVaDoDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LichSuKhach.resx">
+      <DependentUpon>LichSuKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -107,6 +131,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="LichSuThueDataSet.xsc">
+      <DependentUpon>LichSuThueDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LichSuThueDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LichSuThueDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LichSuThueDataSet.xss">
+      <DependentUpon>LichSuThueDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,6 +151,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TNN_QLKSDataSet.xsc">
+      <DependentUpon>TNN_QLKSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TNN_QLKSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TNN_QLKSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TNN_QLKSDataSet.xss">
+      <DependentUpon>TNN_QLKSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TNN_QLKSDataSet1.xsc">
+      <DependentUpon>TNN_QLKSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TNN_QLKSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TNN_QLKSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TNN_QLKSDataSet1.xss">
+      <DependentUpon>TNN_QLKSDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

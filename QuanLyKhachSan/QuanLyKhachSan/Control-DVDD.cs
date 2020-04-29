@@ -55,24 +55,24 @@ namespace QuanLyKhachSan
         {
             //viết proc lấy ds dịch vụ
             DataTable data;
-            string query = "select * from DichVu";
+            string query = "GetDanhSachDichVu";
             data = DataProvider.Instance.ExecuteQuery(query);
             return ConvertDV(data);
         }
-        public List<DoDung> GetDanhSachDichDung()
+        public List<DoDung> GetDanhSachDoDung()
         {
             //viết proc lấy ds đồ dùng
             DataTable data;
-            string query = "select * from DoDung";
+            string query = "GetDanhSachDoDung";
             data = DataProvider.Instance.ExecuteQuery(query);
             return ConvertDD(data);
         }
         public List<SuDung> GetDanhSachSuDung()
         {
             DataTable datadd;
-            string query1 = "select * from DoDung";
+            string query1 = "GetDanhSachDoDung";
             DataTable datadv;
-            string query2 = "select * from DichVu";
+            string query2 = "GetDanhSachDichVu";
             datadd = DataProvider.Instance.ExecuteQuery(query1);
             datadv = DataProvider.Instance.ExecuteQuery(query2);
             return ConvertSS(datadd,datadv);
@@ -86,13 +86,13 @@ namespace QuanLyKhachSan
                     if (item.Check == true)
                     {
                         // viết proc lưu xuống hóa đơn đồ dùng
-                        string query = "";
+                        string query = "ThemHoaDonDoDung '" + item.Ma + "', " + mahd + ", " + item.SoLuong + ", " + item.ThanhTien;
                         DataProvider.Instance.ExecuteQuery(query);
                     }
                     else
                     {
                         // viêt proc lưu xuống hóa đơn dịch vụ
-                        string query = "";
+                        string query = "ThemHoaDonDichVu '" + item.Ma + "', " + mahd + ", " + item.SoLuong + ", " + item.ThanhTien;
                         DataProvider.Instance.ExecuteQuery(query);
                     }
                 }
