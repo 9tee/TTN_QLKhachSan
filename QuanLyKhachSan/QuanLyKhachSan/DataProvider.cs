@@ -21,7 +21,7 @@ namespace QuanLyKhachSan
 
         private DataProvider() { }
 
-        private string str = @"Data Source=DESKTOP-LAOT6MD\GNOS02;Initial Catalog=TNN_QLKS;Integrated Security=True";
+        private string str = @"Data Source=DESKTOP-LAOT6MD\GNOS02;Initial Catalog=TTN_QLKS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query)
         {

@@ -17,12 +17,9 @@ namespace QuanLyKhachSan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new ThemKhachHang());
-=======
-            Application.Run(new MainForm());
->>>>>>> parent of a36975f... Truyền dữ liệu từ form ThemKhachHang sang CheckBox Trong của form ChonPhong
+            //Application.Run(new MainForm());
             //Application.Run(new DichVuVaDoDung(0));
+            Application.Run(new ThemKhachHang());
         }
     }
 }

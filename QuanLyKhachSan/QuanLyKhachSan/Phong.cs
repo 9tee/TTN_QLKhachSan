@@ -22,7 +22,7 @@ namespace QuanLyKhachSan
             this.tang = 1;
             this.trong = true;
         }
-        public Phong(int maP,decimal giaPhongNgay,decimal giaPhongGio,int tang,bool trong)
+        public Phong(int maP, decimal giaPhongNgay, decimal giaPhongGio, int tang, bool trong)
         {
             this.maP = maP;
             this.giaPhongNgay = giaPhongNgay;
@@ -36,11 +36,13 @@ namespace QuanLyKhachSan
             this.giaPhongNgay = giaPhongNgay;
             this.giaPhongGio = giaPhongGio;
             this.tang = tang;
+            //this.trong = trong;
         }
         public int MaP { get => maP; set => maP = value; }
         public decimal GiaPhongNgay { get => giaPhongNgay; set => giaPhongNgay = value; }
         public decimal GiaPhongGio { get => giaPhongGio; set => giaPhongGio = value; }
         public int Tang { get => tang; set => tang = value; }
         public bool Trong { get => trong; set => trong = value; }
+    
     }
 }

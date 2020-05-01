@@ -10,16 +10,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
-<<<<<<< HEAD
 namespace QuanLyKhachSan.GUI
 {
-
     // 2 lựa chọn khi thêm mới kách hàng đặt phòng và khách hàng cũ đến đặt phòng
+    
     public partial class ThemKhachHang : Form
     {
+        public static List<Phong> PhongDuocChon = new List<Phong>();
         public static string NgayDen;
         public static string NgayDi;
-        public static List<Phong> PhongDuocChon = new List<Phong>();
         public ThemKhachHang()
         {
             InitializeComponent();
@@ -30,23 +29,6 @@ namespace QuanLyKhachSan.GUI
         {
             InitializeComponent();
             this.Name = "Đặt phòng";
-=======
-namespace QuanLyKhachSan.GUI
-{
-    // 2 lựa chọn khi thêm mới kách hàng đặt phòng và khách hàng cũ đến đặt phòng
-    public partial class ThemKhachHang : Form
-    {
-        public ThemKhachHang()
-        {
-            InitializeComponent();
-            this.Name = "Thêm khách hàng";
-        }
-
-        public ThemKhachHang(string TenKhachHang, string SDT, string CMT)
-        {
-            InitializeComponent();
-            this.Name = "Đặt phòng";
->>>>>>> parent of a36975f... Truyền dữ liệu từ form ThemKhachHang sang CheckBox Trong của form ChonPhong
         }
 
         private void XacNhanBt_Click(object sender, EventArgs e)
@@ -106,6 +88,8 @@ namespace QuanLyKhachSan.GUI
 
         private void ChonPhongBt_Click(object sender, EventArgs e)
         {
+            NgayDen = ngayNhanPicker.Value.ToString("yyyy-MM-dd");
+            NgayDi = ngayTraPicker.Value.ToString("yyyy-MM-dd");
             this.Hide();
             ChonPhong formChonPhong = new ChonPhong();
             formChonPhong.FormClosed += FormChonPhong_FormClosed;
@@ -119,19 +103,15 @@ namespace QuanLyKhachSan.GUI
         {
             this.Show();
             phongDataGrid.DataSource = PhongDuocChon;
-            phongDataGrid.Refresh();
         }
 
         private void HuyBt_Click(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void ThemKhachHang_Load(object sender, EventArgs e)
         {
             theoGioRb.Checked = true;
-            
-        }
         }
     }
 }
