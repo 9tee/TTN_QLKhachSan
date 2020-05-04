@@ -13,8 +13,12 @@ using System.Text.RegularExpressions;
 namespace QuanLyKhachSan.GUI
 {
     // 2 lựa chọn khi thêm mới kách hàng đặt phòng và khách hàng cũ đến đặt phòng
+    
     public partial class ThemKhachHang : Form
     {
+        public static List<Phong> PhongDuocChon = new List<Phong>();
+        public static string NgayDen;
+        public static string NgayDi;
         public ThemKhachHang()
         {
             InitializeComponent();
@@ -84,6 +88,8 @@ namespace QuanLyKhachSan.GUI
 
         private void ChonPhongBt_Click(object sender, EventArgs e)
         {
+            NgayDen = ngayNhanPicker.Value.ToString("yyyy-MM-dd");
+            NgayDi = ngayTraPicker.Value.ToString("yyyy-MM-dd");
             this.Hide();
             ChonPhong formChonPhong = new ChonPhong();
             formChonPhong.FormClosed += FormChonPhong_FormClosed;
@@ -95,7 +101,8 @@ namespace QuanLyKhachSan.GUI
         }
         private void FormChonPhong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Show(); ;
+            this.Show();
+            phongDataGrid.DataSource = PhongDuocChon;
         }
 
         private void HuyBt_Click(object sender, EventArgs e)

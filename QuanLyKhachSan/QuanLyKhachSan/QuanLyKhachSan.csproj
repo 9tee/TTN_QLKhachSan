@@ -76,8 +76,12 @@
     <Compile Include="GUI\ThemKhachHang.Designer.cs">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonPhong.cs" />
+    <Compile Include="HoaDonPhongController.cs" />
     <Compile Include="KhachHang.cs" />
     <Compile Include="KhachHangController.cs" />
+    <Compile Include="Phong.cs" />
+    <Compile Include="PhongController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuDung.cs" />

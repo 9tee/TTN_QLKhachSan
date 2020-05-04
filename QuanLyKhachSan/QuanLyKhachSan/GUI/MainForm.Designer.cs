@@ -39,8 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timKiemTb = new System.Windows.Forms.TextBox();
             this.timBt = new System.Windows.Forms.Button();
-            this.comboBox_LoaiThongTin = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +47,7 @@
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(16, 202);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1013, 474);
             this.panel1.TabIndex = 0;
@@ -59,7 +57,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1013, 474);
@@ -68,7 +66,7 @@
             // addKHBt
             // 
             this.addKHBt.Location = new System.Drawing.Point(16, 15);
-            this.addKHBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addKHBt.Margin = new System.Windows.Forms.Padding(4);
             this.addKHBt.Name = "addKHBt";
             this.addKHBt.Size = new System.Drawing.Size(143, 28);
             this.addKHBt.TabIndex = 1;
@@ -79,7 +77,7 @@
             // checkInBt
             // 
             this.checkInBt.Location = new System.Drawing.Point(16, 50);
-            this.checkInBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkInBt.Margin = new System.Windows.Forms.Padding(4);
             this.checkInBt.Name = "checkInBt";
             this.checkInBt.Size = new System.Drawing.Size(143, 28);
             this.checkInBt.TabIndex = 2;
@@ -90,7 +88,7 @@
             // checkOutBt
             // 
             this.checkOutBt.Location = new System.Drawing.Point(16, 86);
-            this.checkOutBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkOutBt.Margin = new System.Windows.Forms.Padding(4);
             this.checkOutBt.Name = "checkOutBt";
             this.checkOutBt.Size = new System.Drawing.Size(143, 28);
             this.checkOutBt.TabIndex = 3;
@@ -101,7 +99,7 @@
             // datTruocBt
             // 
             this.datTruocBt.Location = new System.Drawing.Point(16, 122);
-            this.datTruocBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datTruocBt.Margin = new System.Windows.Forms.Padding(4);
             this.datTruocBt.Name = "datTruocBt";
             this.datTruocBt.Size = new System.Drawing.Size(143, 28);
             this.datTruocBt.TabIndex = 4;
@@ -112,7 +110,7 @@
             // lichSuBt
             // 
             this.lichSuBt.Location = new System.Drawing.Point(16, 158);
-            this.lichSuBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lichSuBt.Margin = new System.Windows.Forms.Padding(4);
             this.lichSuBt.Name = "lichSuBt";
             this.lichSuBt.Size = new System.Drawing.Size(143, 28);
             this.lichSuBt.TabIndex = 5;
@@ -144,7 +142,7 @@
             // timKiemTb
             // 
             this.timKiemTb.Location = new System.Drawing.Point(746, 128);
-            this.timKiemTb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timKiemTb.Margin = new System.Windows.Forms.Padding(4);
             this.timKiemTb.Name = "timKiemTb";
             this.timKiemTb.Size = new System.Drawing.Size(284, 22);
             this.timKiemTb.TabIndex = 8;
@@ -152,7 +150,7 @@
             // timBt
             // 
             this.timBt.Location = new System.Drawing.Point(893, 158);
-            this.timBt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timBt.Margin = new System.Windows.Forms.Padding(4);
             this.timBt.Name = "timBt";
             this.timBt.Size = new System.Drawing.Size(136, 28);
             this.timBt.TabIndex = 9;
@@ -160,35 +158,11 @@
             this.timBt.UseVisualStyleBackColor = true;
             this.timBt.Click += new System.EventHandler(this.timBt_Click);
             // 
-            // comboBox_LoaiThongTin
-            // 
-            this.comboBox_LoaiThongTin.FormattingEnabled = true;
-            this.comboBox_LoaiThongTin.Items.AddRange(new object[] {
-            "CMT",
-            "SĐT",
-            "Họ tên"});
-            this.comboBox_LoaiThongTin.Location = new System.Drawing.Point(746, 162);
-            this.comboBox_LoaiThongTin.Name = "comboBox_LoaiThongTin";
-            this.comboBox_LoaiThongTin.Size = new System.Drawing.Size(140, 24);
-            this.comboBox_LoaiThongTin.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(640, 169);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Loại thông tin:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 681);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox_LoaiThongTin);
             this.Controls.Add(this.timBt);
             this.Controls.Add(this.timKiemTb);
             this.Controls.Add(this.label2);
@@ -199,7 +173,7 @@
             this.Controls.Add(this.checkInBt);
             this.Controls.Add(this.addKHBt);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1061, 728);
             this.MinimumSize = new System.Drawing.Size(1061, 728);
@@ -227,7 +201,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox timKiemTb;
         private System.Windows.Forms.Button timBt;
-        private System.Windows.Forms.ComboBox comboBox_LoaiThongTin;
-        private System.Windows.Forms.Label label3;
     }
 }

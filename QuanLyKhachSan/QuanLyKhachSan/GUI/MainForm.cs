@@ -53,31 +53,18 @@ namespace QuanLyKhachSan.GUI
 
         private void timBt_Click(object sender, EventArgs e)
         {
-            if (timKiemTb.Text == "")
+            string tktext = timKiemTb.Text;
+            if (tktext == "")
             {
                 MessageBox.Show("Phải nhập thông tin");
             }
             else
             {
-                if (comboBox_LoaiThongTin.Text == "")
-                {
-                    MessageBox.Show("Phải chọn loại thông tin");
-                }
-                else
-                {
-                    if (comboBox_LoaiThongTin.Text == "CMT")
-                    {
-                        dataGridView1.DataSource = KhachHangController.TKKhachHangCMT(timKiemTb.Text);
-                    }
-                    else if (comboBox_LoaiThongTin.Text == "SĐT")
-                    {
-                        dataGridView1.DataSource = KhachHangController.TKKhachHangSDT(timKiemTb.Text);
-                    }
-                    else if (comboBox_LoaiThongTin.Text == "Họ tên")
-                    {
-                        dataGridView1.DataSource = KhachHangController.TKKhachHangHoTen(timKiemTb.Text);
-                    }
-                }
+                List<KhachHang> lkh = new List<KhachHang>();
+                lkh.AddRange(KhachHangController.TKKhachHangCMT(tktext));
+                lkh.AddRange(KhachHangController.TKKhachHangHoTen(tktext));
+                lkh.AddRange(KhachHangController.TKKhachHangSDT(tktext));
+                lkh = lkh.Distinct().ToList();
             }
         }
 
