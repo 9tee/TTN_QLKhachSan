@@ -21,6 +21,7 @@ namespace QuanLyKhachSan.GUI
         private int rowIndex = 0;
         private int mahd;
 
+
         public DichVuVaDoDung(int MaHoaDon)
         {
             mahd = MaHoaDon;

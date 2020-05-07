@@ -37,3 +37,16 @@ E:\$_E_School\$_School_Pj\New folder\TTN_QuanLy_KhachSan\QuanLyKhachSan\QuanLyKh
 E:\$_E_School\$_School_Pj\New folder\TTN_QuanLy_KhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 E:\$_E_School\$_School_Pj\New folder\TTN_QuanLy_KhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 E:\$_E_School\$_School_Pj\New folder\TTN_QuanLy_KhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.ChonPhong.resources
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.DichVuVaDoDung.resources
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.MainForm.resources
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.ThemKhachHang.resources
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.LichSuKhach.resources

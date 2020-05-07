@@ -19,71 +19,98 @@ namespace QuanLyKhachSan.GUI
         public static List<Phong> PhongDuocChon = new List<Phong>();
         public static string NgayDen;
         public static string NgayDi;
+        public static int MaKhachHang;
+
         public ThemKhachHang()
         {
             InitializeComponent();
             this.Name = "Thêm khách hàng";
         }
 
-        public ThemKhachHang(string TenKhachHang, string SDT, string CMT)
+        public ThemKhachHang(string TenKhachHang, string SDT, string CMT,int MaKH)
         {
             InitializeComponent();
             this.Name = "Đặt phòng";
+            tenKhachHangTb.Text = TenKhachHang;
+            soDienThoaiTb.Text = SDT;
+            soCMTTb.Text = CMT;
+            MaKhachHang = MaKH;
         }
 
         private void XacNhanBt_Click(object sender, EventArgs e)
         {
-            //bool matchTenKH = Regex.IsMatch(tenKhachHangTb.Text, @"^\s");
-            //bool matchCMT = Regex.IsMatch(soCMTTb.Text, @"^\s");
+            int maKHCheck;//kiem tra khach hang trong csdl co ngay tao mac dinh 1900/01/01 -> chua chot hoa don tong
+            
+            maKHCheck = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("PROC_KiemTraTruocKhiDatPhong '" + MaKhachHang + "'"));
+            
 
-            //tenKhachHangTb.Text = tenKhachHangTb.Text.Trim();
-            //soCMTTb.Text = soCMTTb.Text.Trim();
+            bool matchTenKH = Regex.IsMatch(tenKhachHangTb.Text, @"^\s");
+            bool matchCMT = Regex.IsMatch(soCMTTb.Text, @"^\s");
 
-            //if (tenKhachHangTb.Text == "")
-            //{
-            //    MessageBox.Show("Tên khách hàng không Được Để Trống");
-            //    tenKhachHangTb.Focus();
-            //}
-            //else if (soCMTTb.Text == "")
-            //{
-            //    MessageBox.Show("Số CMT không Được Để Trống");
-            //    soCMTTb.Focus();
-            //}
-            //else
-            //{
-            //    if (matchTenKH)
-            //    {
-            //        MessageBox.Show("Tên khách hàng không Được Để Tất Cả Là Khoảng Trắng");
-            //        tenKhachHangTb.Focus();
-            //    }
-            //    else if (matchCMT)
-            //    {
-            //        MessageBox.Show("Chứng minh thư Được Để Tất Cả Là Khoảng Trắng");
-            //        soCMTTb.Focus();
-            //    }
-            //    else
-            //    {
-            //        string ngayNhan = ngayNhanPicker.Value.ToString("yyyy-MM-dd"); //Lay ngay nhan phong
-            //        string ngayTra = ngayTraPicker.Value.ToString("yyyy-MM-dd");// Lay ngay tra phong
-            //        bool ngay ;
-            //        if (theoNgayRb.Checked == true)
-            //        {
-            //            ngay = true;
-            //        } else {
-            //            ngay = false;
-            //        }//Lay cach thue
+            tenKhachHangTb.Text = tenKhachHangTb.Text.Trim();
+            soCMTTb.Text = soCMTTb.Text.Trim();
 
-                    //if (themKH())
-                    //{
-                    //    MessageBox.Show("Thêm mới thành công");
+            if (tenKhachHangTb.Text == "")
+            {
+                MessageBox.Show("Tên khách hàng không Được Để Trống");
+                tenKhachHangTb.Focus();
+            }
+            else if (soCMTTb.Text == "")
+            {
+                MessageBox.Show("Số CMT không Được Để Trống");
+                soCMTTb.Focus();
+            }
+            else
+            {
+                if (matchTenKH)
+                {
+                    MessageBox.Show("Tên khách hàng không Được Để Tất Cả Là Khoảng Trắng");
+                    tenKhachHangTb.Focus();
+                }
+                else if (matchCMT)
+                {
+                    MessageBox.Show("Chứng minh thư không Được Để Tất Cả Là Khoảng Trắng");
+                    soCMTTb.Focus();
+                }
+                else
+                {
+                    string ngayNhan = ngayNhanPicker.Value.ToString("yyyy-MM-dd"); //Lay ngay nhan phong
+                    string ngayTra = ngayTraPicker.Value.ToString("yyyy-MM-dd");// Lay ngay tra phong
+                    bool ngay;
+                    if (theoNgayRb.Checked == true)
+                    {
+                        ngay = true;
+                    }
+                    else
+                    {
+                        ngay = false;
+                    }//Lay cach thue
+                    
 
-                    //    tenKhachHangTb.Text = "";
-                    //    soDienThoaiTb.Text = "";
-                    //    soCMTTb.Text = "";
-                    //}
-                    //else MessageBox.Show("Thêm mới thất bại");
-            //    }
-            //}
+                    if (phongDataGrid.Rows.Count == 0)
+                    {
+                        MessageBox.Show(" ! Chua chon phong");
+                    }
+                    else if (maKHCheck != MaKhachHang)
+                    {
+
+                        int soPhong = phongDataGrid.Rows.Count;
+                        DataProvider.Instance.ExecuteNonQuery("PROC_TaoHoaDon '" + MaKhachHang + "'");
+                        for (int rows = 0; rows < soPhong ; rows ++)
+                        {
+                            int maPhong = Convert.ToInt32(phongDataGrid.Rows[rows].Cells[0].Value.ToString());
+                            DataProvider.Instance.ExecuteNonQuery("PROC_DatPhongTruoc '" + MaKhachHang + "','" + maPhong + "','" + ngayNhan + "','" + ngayTra + "','" + ngay + "'");
+                            MessageBox.Show("-----Thanh Cong!-----");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("-----That Bai!-----");
+                    }
+
+                }
+            }
         }
 
         private void ChonPhongBt_Click(object sender, EventArgs e)
@@ -107,6 +134,7 @@ namespace QuanLyKhachSan.GUI
 
         private void HuyBt_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
 
         private void ThemKhachHang_Load(object sender, EventArgs e)

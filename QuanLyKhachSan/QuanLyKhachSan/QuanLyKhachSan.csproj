@@ -64,6 +64,12 @@
     <Compile Include="GUI\DichVuVaDoDung.Designer.cs">
       <DependentUpon>DichVuVaDoDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\LichSuKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LichSuKhach.Designer.cs">
+      <DependentUpon>LichSuKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DichVuVaDoDung.resx">
       <DependentUpon>DichVuVaDoDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LichSuKhach.resx">
+      <DependentUpon>LichSuKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
