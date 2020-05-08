@@ -22,7 +22,7 @@ namespace QuanLyKhachSan.GUI
         private void ChonPhong_Load(object sender, EventArgs e)
         {
             //phongDataGrid.DataSource = xemPhong();
-            //phongDataGrid.Refresh();
+            phongDataGrid.Refresh();
             phongDataGrid.DataSource = PhongController.HienTatCaPhongVaKTNgay(Convert.ToDateTime(ThemKhachHang.NgayDen), Convert.ToDateTime(ThemKhachHang.NgayDi));
             //phongDataGrid.Columns["MaP"].Visible = true;
 

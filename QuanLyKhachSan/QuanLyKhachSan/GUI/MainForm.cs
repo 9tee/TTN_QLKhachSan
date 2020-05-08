@@ -192,11 +192,13 @@ namespace QuanLyKhachSan.GUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.Refresh();
             dataGridView1.DataSource = KhachHangController.HTTatCaKhachHang();
             dataGridView1.Columns[0].HeaderText = "Tên Khách Hàng";
             dataGridView1.Columns[1].HeaderText = "Số Điện Thoại";
             dataGridView1.Columns[2].HeaderText = "Chứng Minh Thư";
             dataGridView1.Columns[3].HeaderText = "Mã Khách Hàng";
+            
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)

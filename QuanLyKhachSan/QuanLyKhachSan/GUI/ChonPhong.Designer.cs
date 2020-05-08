@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.phongDataGrid = new System.Windows.Forms.DataGridView();
+            this.checkPhong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.huyBt = new System.Windows.Forms.Button();
             this.xacNhanBt = new System.Windows.Forms.Button();
-            this.checkPhong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.phongDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +46,12 @@
             this.phongDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.phongDataGrid.Size = new System.Drawing.Size(560, 398);
             this.phongDataGrid.TabIndex = 0;
+            // 
+            // checkPhong
+            // 
+            this.checkPhong.HeaderText = "Chọn Phòng";
+            this.checkPhong.Name = "checkPhong";
+            this.checkPhong.ReadOnly = true;
             // 
             // huyBt
             // 
@@ -67,12 +73,6 @@
             this.xacNhanBt.UseVisualStyleBackColor = true;
             this.xacNhanBt.Click += new System.EventHandler(this.XacNhanBt_Click);
             // 
-            // checkPhong
-            // 
-            this.checkPhong.HeaderText = "Chọn Phòng";
-            this.checkPhong.Name = "checkPhong";
-            this.checkPhong.ReadOnly = true;
-            // 
             // ChonPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +82,7 @@
             this.Controls.Add(this.huyBt);
             this.Controls.Add(this.phongDataGrid);
             this.Name = "ChonPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn phòng";
             this.Load += new System.EventHandler(this.ChonPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phongDataGrid)).EndInit();

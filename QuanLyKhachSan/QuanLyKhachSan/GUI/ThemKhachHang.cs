@@ -100,9 +100,9 @@ namespace QuanLyKhachSan.GUI
                         {
                             int maPhong = Convert.ToInt32(phongDataGrid.Rows[rows].Cells[0].Value.ToString());
                             DataProvider.Instance.ExecuteNonQuery("PROC_DatPhongTruoc '" + MaKhachHang + "','" + maPhong + "','" + ngayNhan + "','" + ngayTra + "','" + ngay + "'");
-                            MessageBox.Show("-----Thanh Cong!-----");
-
+                            
                         }
+                        MessageBox.Show("-----Thanh Cong!-----");
                     }
                     else
                     {
