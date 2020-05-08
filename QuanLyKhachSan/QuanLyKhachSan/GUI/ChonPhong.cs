@@ -76,6 +76,7 @@ namespace QuanLyKhachSan.GUI
                 }
 
             }
+            this.Close();
         }
     }
 }

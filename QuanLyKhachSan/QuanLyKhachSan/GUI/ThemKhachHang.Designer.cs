@@ -220,6 +220,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ThemKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ThemKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phongDataGrid)).EndInit();
             this.ResumeLayout(false);
