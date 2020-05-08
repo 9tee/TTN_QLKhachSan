@@ -14,6 +14,7 @@ namespace QuanLyKhachSan.GUI
     public partial class ChonPhong : Form
     {
         //public static List<Phong> PhongDuocChon = new List<Phong>();
+        public static List<Phong> PhongDuocChon = new List<Phong>();
         public ChonPhong()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace QuanLyKhachSan.GUI
         {
             //phongDataGrid.DataSource = xemPhong();
             //phongDataGrid.Refresh();
+            PhongDuocChon = new List<Phong>();
             phongDataGrid.DataSource = PhongController.HienTatCaPhongVaKTNgay(Convert.ToDateTime(ThemKhachHang.NgayDen), Convert.ToDateTime(ThemKhachHang.NgayDi));
             //phongDataGrid.Columns["MaP"].Visible = true;
 
@@ -69,13 +71,13 @@ namespace QuanLyKhachSan.GUI
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    ThemKhachHang.PhongDuocChon.Add(new Phong(Convert.ToInt32(row.Cells[1].Value),
+                        PhongDuocChon.Add(new Phong(Convert.ToInt32(row.Cells[1].Value),
                         Convert.ToDecimal(row.Cells[2].Value), 
                         Convert.ToDecimal(row.Cells[3].Value), 
                         Convert.ToInt32(row.Cells[4].Value)));
                 }
-
             }
+            this.Close();
         }
     }
 }

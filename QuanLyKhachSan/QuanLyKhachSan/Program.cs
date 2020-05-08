@@ -19,7 +19,7 @@ namespace QuanLyKhachSan
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm());
             //Application.Run(new DichVuVaDoDung(0));
-            Application.Run(new ThemKhachHang());
+            Application.Run(new MainForm());
         }
     }
 }
