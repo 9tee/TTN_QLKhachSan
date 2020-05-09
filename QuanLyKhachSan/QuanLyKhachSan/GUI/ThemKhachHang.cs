@@ -16,7 +16,7 @@ namespace QuanLyKhachSan.GUI
     
     public partial class ThemKhachHang : Form
     {
-        public static List<Phong> PhongDuocChon = new List<Phong>();
+        
         public static string NgayDen;
         public static string NgayDi;
         public static int MaKhachHang;
@@ -129,12 +129,14 @@ namespace QuanLyKhachSan.GUI
         private void FormChonPhong_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
-            phongDataGrid.DataSource = PhongDuocChon;
+            phongDataGrid.Refresh();
+            phongDataGrid.DataSource = ChonPhong.PhongDuocChon;
         }
 
         private void HuyBt_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void ThemKhachHang_Load(object sender, EventArgs e)

@@ -16,20 +16,20 @@ namespace QuanLyKhachSan
         public string cmt;
         public KhachHang()
         {
-            this.MaKH = 0;
+            this.maKH = 0;
             this.tenKH = "";
             this.sdt = "";
             this.cmt = "";
         }
         public KhachHang(int maKH, string tenKH, string sdt,string cmt)
         {
-            this.MaKH = maKH;
+            this.maKH = maKH;
             this.tenKH = tenKH;
             this.sdt = sdt;
             this.cmt = cmt;
         }
 
-        //public int MaKH { get => MaKH; set => MaKH = value; }
+        public int MaKH { get => maKH; set => maKH = value; }
         public string TenKH { get => tenKH; set => tenKH = value; }
         public string SDT { get => sdt; set => sdt = value; }
         public string CMT { get => cmt; set => cmt = value; }
