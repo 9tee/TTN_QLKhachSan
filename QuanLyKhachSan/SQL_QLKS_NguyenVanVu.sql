@@ -78,7 +78,7 @@ end
 
 
 go
-alter proc PROC_CheckIn(@makh int) as
+create proc PROC_CheckIn(@makh int) as
 begin
 	declare @trangthai nvarchar(50)
 	declare @ngayhomnay datetime
@@ -142,7 +142,7 @@ begin
 end
 
 
-alter proc PROC_KiemTraTrangThaiPhong(@makh int )as
+create proc PROC_KiemTraTrangThaiPhong(@makh int )as
 begin
 	declare @mahd int , @maphong int
 	declare  @ngaytao datetime
@@ -172,13 +172,13 @@ end
 
 
 
-
+PROC_KiemTraDaCheckOut '1'
 go
-create proc PROC_KiemTraDaCheckOut(@makh int)as
+alter proc PROC_KiemTraDaCheckOut(@makh int)as
 begin
 	declare @mahd int 
 
-	set @mahd = (select MaHD from HoaDon where HoaDon.MaKH = @makh and HoaDon.NgayTao= '1900-01-01' )
+	set @mahd = (select MaHD from HoaDon where HoaDon.MaKH = @makh and HoaDon.NgayTao= '1900-01-01 00:00:00.000' )
 	select TongTien from HoaDon
 	where MaKH = @makh and MaHD = @mahd
 end
@@ -187,7 +187,7 @@ end
 
 
 go
-alter proc PROC_CheckOut(@makh int)as
+create proc PROC_CheckOut(@makh int)as
 begin
 
 	declare @tienDoDung money , @tienPhong money , @tongtienPhong money, @tienDichVu money , @tongtien money , @giaThueTheoNgay money , @giaThueTheoGio money
