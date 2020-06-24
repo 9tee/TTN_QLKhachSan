@@ -57,6 +57,13 @@ namespace QuanLyKhachSan
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return ConvertToKH(dt);
         }
+        public static int ThemKhachHang(string tenKH,string sdt, string cmt)
+        {
+            string query = "INSERT INTO [dbo].[KhachHang]([TenKH],[SDT],[CMT])VALUES(N'"+tenKH+"','"+sdt+"','"+cmt+"')";
+            DataProvider.Instance.ExecuteNonQuery(query);
+            query = "select max(MaKH) from KhachHang";
+            return Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+        }
 
     }
 }

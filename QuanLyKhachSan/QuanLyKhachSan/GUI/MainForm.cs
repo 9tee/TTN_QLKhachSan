@@ -53,7 +53,7 @@ namespace QuanLyKhachSan.GUI
         {
             int maKhachHangHienTai;
             DataGridViewRow currentRow = dataGridView1.CurrentRow;
-            maKhachHangHienTai = Convert.ToInt32(currentRow.Cells[3].Value);
+            maKhachHangHienTai = Convert.ToInt32(currentRow.Cells[0].Value);
             
             
             if (maKhachHangHienTai != 0)
@@ -105,7 +105,7 @@ namespace QuanLyKhachSan.GUI
             DataGridViewRow currentRow = dataGridView1.CurrentRow;
 
 
-            maKhachHangHienTai = Convert.ToInt32(currentRow.Cells[3].Value);
+            maKhachHangHienTai = Convert.ToInt32(currentRow.Cells[0].Value);
             tien = Convert.ToDecimal(DataProvider.Instance.ExecuteScalar("PROC_KiemTraDaCheckOut '" + maKhachHangHienTai + "'"));
             
 
@@ -143,10 +143,11 @@ namespace QuanLyKhachSan.GUI
             this.Hide();
             DataGridViewRow currentRow = dataGridView1.CurrentRow;
             ThemKhachHang themKhachHang = new ThemKhachHang(
-                currentRow.Cells[0].Value.ToString(),
+
+                Convert.ToInt32(currentRow.Cells[0].Value),
                 currentRow.Cells[1].Value.ToString(),
                 currentRow.Cells[2].Value.ToString(),
-                Convert.ToInt32(currentRow.Cells[3].Value)
+                currentRow.Cells[3].Value.ToString()
                 );
             themKhachHang.FormClosed += ThemKhachHang_FormClosed;
             themKhachHang.Show();
@@ -163,8 +164,7 @@ namespace QuanLyKhachSan.GUI
         {
             this.Hide();
             DataGridViewRow currentRow = dataGridView1.CurrentRow;
-            LichSuKhach lichSuKhachForm = new LichSuKhach();
-            lichSuKhachForm.MaKhach = Convert.ToInt32(currentRow.Cells[3].Value);
+            LichSuKhach lichSuKhachForm = new LichSuKhach(Convert.ToInt32(currentRow.Cells[0].Value));
             lichSuKhachForm.FormClosed += LichSuKhachForm_FormClosed;
             lichSuKhachForm.Show();
         }
@@ -194,10 +194,11 @@ namespace QuanLyKhachSan.GUI
         {
             dataGridView1.Refresh();
             dataGridView1.DataSource = KhachHangController.HTTatCaKhachHang();
-            dataGridView1.Columns[0].HeaderText = "Tên Khách Hàng";
-            dataGridView1.Columns[1].HeaderText = "Số Điện Thoại";
-            dataGridView1.Columns[2].HeaderText = "Chứng Minh Thư";
-            dataGridView1.Columns[3].HeaderText = "Mã Khách Hàng";
+            dataGridView1.Columns[0].HeaderText = "Mã Khách Hàng";
+            dataGridView1.Columns[1].HeaderText = "Tên Khách Hàng";
+            dataGridView1.Columns[2].HeaderText = "Số Điện Thoại";
+            dataGridView1.Columns[3].HeaderText = "Chứng Minh Thư";
+            
             
         }
 

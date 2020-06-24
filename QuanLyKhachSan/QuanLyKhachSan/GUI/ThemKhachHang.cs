@@ -27,7 +27,7 @@ namespace QuanLyKhachSan.GUI
             this.Name = "Thêm khách hàng";
         }
 
-        public ThemKhachHang(string TenKhachHang, string SDT, string CMT,int MaKH)
+        public ThemKhachHang(int MaKH,string TenKhachHang, string SDT, string CMT)
         {
             InitializeComponent();
             this.Name = "Đặt phòng";
@@ -39,6 +39,8 @@ namespace QuanLyKhachSan.GUI
 
         private void XacNhanBt_Click(object sender, EventArgs e)
         {
+            if(this.Name == "Đặt phòng")
+            {     
             int maKHCheck;//kiem tra khach hang trong csdl co ngay tao mac dinh 1900/01/01 -> chua chot hoa don tong
             
             maKHCheck = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("PROC_KiemTraTruocKhiDatPhong '" + MaKhachHang + "'"));
@@ -50,65 +52,142 @@ namespace QuanLyKhachSan.GUI
             tenKhachHangTb.Text = tenKhachHangTb.Text.Trim();
             soCMTTb.Text = soCMTTb.Text.Trim();
 
-            if (tenKhachHangTb.Text == "")
-            {
-                MessageBox.Show("Tên khách hàng không Được Để Trống");
-                tenKhachHangTb.Focus();
-            }
-            else if (soCMTTb.Text == "")
-            {
-                MessageBox.Show("Số CMT không Được Để Trống");
-                soCMTTb.Focus();
-            }
-            else
-            {
-                if (matchTenKH)
+                if (tenKhachHangTb.Text == "")
                 {
-                    MessageBox.Show("Tên khách hàng không Được Để Tất Cả Là Khoảng Trắng");
+                    MessageBox.Show("Tên khách hàng không Được Để Trống");
                     tenKhachHangTb.Focus();
                 }
-                else if (matchCMT)
+                else if (soCMTTb.Text == "")
                 {
-                    MessageBox.Show("Chứng minh thư không Được Để Tất Cả Là Khoảng Trắng");
+                    MessageBox.Show("Số CMT không Được Để Trống");
                     soCMTTb.Focus();
                 }
                 else
                 {
-                    string ngayNhan = ngayNhanPicker.Value.ToString("yyyy-MM-dd"); //Lay ngay nhan phong
-                    string ngayTra = ngayTraPicker.Value.ToString("yyyy-MM-dd");// Lay ngay tra phong
-                    bool ngay;
-                    if (theoNgayRb.Checked == true)
+                    if (matchTenKH)
                     {
-                        ngay = true;
+                        MessageBox.Show("Tên khách hàng không Được Để Tất Cả Là Khoảng Trắng");
+                        tenKhachHangTb.Focus();
+                    }
+                    else if (matchCMT)
+                    {
+                        MessageBox.Show("Chứng minh thư không Được Để Tất Cả Là Khoảng Trắng");
+                        soCMTTb.Focus();
                     }
                     else
                     {
-                        ngay = false;
-                    }//Lay cach thue
-                    
-
-                    if (phongDataGrid.Rows.Count == 0)
-                    {
-                        MessageBox.Show(" ! Chua chon phong");
-                    }
-                    else if (maKHCheck != MaKhachHang)
-                    {
-
-                        int soPhong = phongDataGrid.Rows.Count;
-                        DataProvider.Instance.ExecuteNonQuery("PROC_TaoHoaDon '" + MaKhachHang + "'");
-                        for (int rows = 0; rows < soPhong ; rows ++)
+                        string ngayNhan = ngayNhanPicker.Value.ToString("yyyy-MM-dd"); //Lay ngay nhan phong
+                        string ngayTra = ngayTraPicker.Value.ToString("yyyy-MM-dd");// Lay ngay tra phong
+                        bool ngay;
+                        if (theoNgayRb.Checked == true)
                         {
-                            int maPhong = Convert.ToInt32(phongDataGrid.Rows[rows].Cells[0].Value.ToString());
-                            DataProvider.Instance.ExecuteNonQuery("PROC_DatPhongTruoc '" + MaKhachHang + "','" + maPhong + "','" + ngayNhan + "','" + ngayTra + "','" + ngay + "'");
-                            
+                            ngay = true;
                         }
-                        MessageBox.Show("-----Thanh Cong!-----");
+                        else
+                        {
+                            ngay = false;
+                        }//Lay cach thue
+
+
+                        if (phongDataGrid.Rows.Count == 0)
+                        {
+                            MessageBox.Show(" ! Chua chon phong");
+                        }
+                        else if (maKHCheck != MaKhachHang)
+                        {
+
+                            int soPhong = phongDataGrid.Rows.Count;
+                            DataProvider.Instance.ExecuteNonQuery("PROC_TaoHoaDon '" + MaKhachHang + "'");
+                            for (int rows = 0; rows < soPhong; rows++)
+                            {
+                                int maPhong = Convert.ToInt32(phongDataGrid.Rows[rows].Cells[0].Value.ToString());
+                                DataProvider.Instance.ExecuteNonQuery("PROC_DatPhongTruoc '" + MaKhachHang + "','" + maPhong + "','" + ngayNhan + "','" + ngayTra + "','" + ngay + "'");
+
+                            }
+                            MessageBox.Show("-----Thanh Cong!-----");
+                        }
+                        else
+                        {
+                            MessageBox.Show("-----That Bai!-----");
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                MaKhachHang = KhachHangController.ThemKhachHang(tenKhachHangTb.Text, soDienThoaiTb.Text, soCMTTb.Text);
+                int maKHCheck;//kiem tra khach hang trong csdl co ngay tao mac dinh 1900/01/01 -> chua chot hoa don tong
+
+                maKHCheck = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("PROC_KiemTraTruocKhiDatPhong '" + MaKhachHang + "'"));
+
+
+                bool matchTenKH = Regex.IsMatch(tenKhachHangTb.Text, @"^\s");
+                bool matchCMT = Regex.IsMatch(soCMTTb.Text, @"^\s");
+
+                tenKhachHangTb.Text = tenKhachHangTb.Text.Trim();
+                soCMTTb.Text = soCMTTb.Text.Trim();
+
+                if (tenKhachHangTb.Text == "")
+                {
+                    MessageBox.Show("Tên khách hàng không Được Để Trống");
+                    tenKhachHangTb.Focus();
+                }
+                else if (soCMTTb.Text == "")
+                {
+                    MessageBox.Show("Số CMT không Được Để Trống");
+                    soCMTTb.Focus();
+                }
+                else
+                {
+                    if (matchTenKH)
+                    {
+                        MessageBox.Show("Tên khách hàng không Được Để Tất Cả Là Khoảng Trắng");
+                        tenKhachHangTb.Focus();
+                    }
+                    else if (matchCMT)
+                    {
+                        MessageBox.Show("Chứng minh thư không Được Để Tất Cả Là Khoảng Trắng");
+                        soCMTTb.Focus();
                     }
                     else
                     {
-                        MessageBox.Show("-----That Bai!-----");
-                    }
+                        string ngayNhan = ngayNhanPicker.Value.ToString("yyyy-MM-dd"); //Lay ngay nhan phong
+                        string ngayTra = ngayTraPicker.Value.ToString("yyyy-MM-dd");// Lay ngay tra phong
+                        bool ngay;
+                        if (theoNgayRb.Checked == true)
+                        {
+                            ngay = true;
+                        }
+                        else
+                        {
+                            ngay = false;
+                        }//Lay cach thue
 
+
+                        if (phongDataGrid.Rows.Count == 0)
+                        {
+                            MessageBox.Show(" ! Chua chon phong");
+                        }
+                        else if (maKHCheck != MaKhachHang)
+                        {
+
+                            int soPhong = phongDataGrid.Rows.Count;
+                            DataProvider.Instance.ExecuteNonQuery("PROC_TaoHoaDon '" + MaKhachHang + "'");
+                            for (int rows = 0; rows < soPhong; rows++)
+                            {
+                                int maPhong = Convert.ToInt32(phongDataGrid.Rows[rows].Cells[0].Value.ToString());
+                                DataProvider.Instance.ExecuteNonQuery("PROC_DatPhongTruoc '" + MaKhachHang + "','" + maPhong + "','" + ngayNhan + "','" + ngayTra + "','" + ngay + "'");
+
+                            }
+                            MessageBox.Show("-----Thanh Cong!-----");
+                        }
+                        else
+                        {
+                            MessageBox.Show("-----That Bai!-----");
+                        }
+
+                    }
                 }
             }
         }
@@ -121,10 +200,6 @@ namespace QuanLyKhachSan.GUI
             ChonPhong formChonPhong = new ChonPhong();
             formChonPhong.FormClosed += FormChonPhong_FormClosed;
             formChonPhong.ShowDialog();
-
-            //phongDataGrid.DataSource = formChonPhong.maPhong;
-            //phongDataGrid.Refresh();
-
         }
         private void FormChonPhong_FormClosed(object sender, FormClosedEventArgs e)
         {

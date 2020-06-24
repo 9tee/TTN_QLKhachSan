@@ -86,7 +86,7 @@
             this.dataGridViewDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDanhSach.Location = new System.Drawing.Point(0, 25);
-            this.dataGridViewDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDanhSach.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDanhSach.Name = "dataGridViewDanhSach";
             this.dataGridViewDanhSach.RowTemplate.Height = 24;
             this.dataGridViewDanhSach.Size = new System.Drawing.Size(550, 182);

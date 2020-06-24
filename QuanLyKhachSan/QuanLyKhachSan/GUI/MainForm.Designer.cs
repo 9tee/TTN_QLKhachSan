@@ -40,8 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timKiemTb = new System.Windows.Forms.TextBox();
             this.timBt = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.theToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -153,19 +153,19 @@
             this.timBt.UseVisualStyleBackColor = true;
             this.timBt.Click += new System.EventHandler(this.timBt_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.theToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
-            // 
             // theToolStripMenuItem
             // 
             this.theToolStripMenuItem.Name = "theToolStripMenuItem";
             this.theToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.theToolStripMenuItem.Text = "Thêm Đồ Dùng Và Dịch Vụ";
             this.theToolStripMenuItem.Click += new System.EventHandler(this.theToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.theToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
             // 
             // MainForm
             // 
@@ -210,7 +210,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox timKiemTb;
         private System.Windows.Forms.Button timBt;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem theToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

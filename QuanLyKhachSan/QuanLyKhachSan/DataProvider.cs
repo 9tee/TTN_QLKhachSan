@@ -21,7 +21,7 @@ namespace QuanLyKhachSan
 
         private DataProvider() { }
 
-        private string str = @"Data Source=nguyenvanvu563a\sqlexpress;Initial Catalog=TNN_QLKS;Integrated Security=True";
+        private string str = @"Data Source=.;Initial Catalog=TNN_QLKS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query)
         {

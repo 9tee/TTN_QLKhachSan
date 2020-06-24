@@ -50,3 +50,4 @@ C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\o
 C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 C:\Users\nguyenvanvu\source\repos\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.LichSuKhach.resources
+D:\GitHub\TTN_QLKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GUI.LichSuKhach.resources

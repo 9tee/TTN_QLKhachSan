@@ -33,6 +33,5 @@ namespace QuanLyKhachSan
         public string TenKH { get => tenKH; set => tenKH = value; }
         public string SDT { get => sdt; set => sdt = value; }
         public string CMT { get => cmt; set => cmt = value; }
-        public int MaKH { get => maKH; set => maKH = value; }
     }
 }
